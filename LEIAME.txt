@@ -1,0 +1,18 @@
+GERADOR DE MAPAS
+
+COMO USAR
+1. Primeira vez: de dois cliques em INSTALAR.bat (precisa do Python 3.12).
+2. Depois: use o atalho "Gerador de Mapas" na Area de Trabalho
+   ou de dois cliques em "ABRIR GERADOR.bat".
+
+MANUAL COMPLETO
+Abra:  Manual\Manual de Uso.html   (abre no navegador)
+
+PASTAS
+  ABRIR GERADOR.bat / INSTALAR.bat   -> o que voce usa
+  Manual\                            -> manual de uso
+  app\                               -> codigo do programa (nao precisa mexer)
+  logs\                              -> registro da instalacao (para suporte)
+  cache\ e .venv\                    -> criadas sozinhas
+
+Os mapas gerados ficam em Documentos\Mapas Gerados.
