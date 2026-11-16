@@ -21,10 +21,12 @@ if not defined PY (
 echo Usando: %PY%
 echo Log da instalacao > "%LOG%"
 echo [1/4] Criando ambiente...
+rem Ambiente copiado de outro computador (aponta para um Python que nao existe aqui): apaga e recria.
+if exist ".venv\Scripts\python.exe" (".venv\Scripts\python.exe" -c "import sys" >nul 2>nul || rmdir /s /q ".venv")
 if not exist ".venv\Scripts\python.exe" (%PY% -m venv .venv >> "%LOG%" 2>&1 || goto erro)
 echo [2/4] Instalando bibliotecas (pode levar alguns minutos)...
 ".venv\Scripts\python.exe" -m pip install --upgrade pip >> "%LOG%" 2>&1
-".venv\Scripts\python.exe" -m pip install -r appequirements.txt >> "%LOG%" 2>&1 || goto erro
+".venv\Scripts\python.exe" -m pip install -r app\requirements.txt >> "%LOG%" 2>&1 || goto erro
 echo [3/4] Conferindo instalacao...
 ".venv\Scripts\python.exe" -c "import geopandas, pyogrio, rasterio, shapely, matplotlib, numpy, requests, contextily, pandas, tkintermapview" >> "%LOG%" 2>&1 || goto erro
 echo [4/4] Criando atalho na Area de Trabalho...

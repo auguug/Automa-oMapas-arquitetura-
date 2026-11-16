@@ -1,5 +1,6 @@
 @echo off
 cd /d "%~dp0"
+if exist ".venv\Scripts\python.exe" (".venv\Scripts\python.exe" -c "import sys" >nul 2>nul || rmdir /s /q ".venv")
 if exist ".venv\Scripts\pythonw.exe" (
   start "" ".venv\Scripts\pythonw.exe" "app\gerador_mapas.pyw"
   exit /b 0
